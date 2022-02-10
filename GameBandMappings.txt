@@ -1,6 +1,7 @@
 a/e a/Launcher
 a/e.c()[Ljava/lang/String; launch
 a/e.j()Ljava/lang/String; getJRE
+a/g a/MinecraftLauncher
 c/a/a/a/c c/a/a/a/StringConcatinationException
 com/nowcomputing/B com/nowcomputing/OperatingSystem
 com/nowcomputing/B.a LINUX
@@ -25,6 +26,13 @@ com/nowcomputing/D.d()V initialiseDirs
 com/nowcomputing/D.e tmpDir
 com/nowcomputing/D.e()Ljava/io/File; getRootDir
 com/nowcomputing/D.f()Ljava/io/File; getUSBMountPoint
+com/nowcomputing/E com/nowcomputing/Retryer
+com/nowcomputing/E.a Ljava/util/logging/Logger; log
+com/nowcomputing/E.a(Ljava/util/concurrent/Callable;)Ljava/lang/Object; CallRepeatably
+com/nowcomputing/E.b I retries
+com/nowcomputing/E.c I retryInterval
+com/nowcomputing/E.log Ljava/util/logging/Logger; logger
+com/nowcomputing/G com/nowcomputing/SelfUpdater
 com/nowcomputing/GbUtilNative com/nowcomputing/GbUtilNative
 com/nowcomputing/GbUtilNative.a logger
 com/nowcomputing/GbUtilNative.a()Z load
@@ -36,10 +44,16 @@ com/nowcomputing/GbUtilNative.getUsbMount(II)Ljava/lang/String; getUsbMount
 com/nowcomputing/GbUtilNative.getUsbSerial(II)Ljava/lang/String; getUsbSerial
 com/nowcomputing/GbUtilNative.lockInstance(Ljava/lang/String;)I lockInstance
 com/nowcomputing/GbUtilNative.unlockInstance(ILjava/lang/String;)V unlockInstance
+com/nowcomputing/I com/nowcomputing/MacOSMetadataFilenameFilter
 com/nowcomputing/Main com/nowcomputing/Main
 com/nowcomputing/Main.a log
+com/nowcomputing/Main.a()Z OpenGameband
 com/nowcomputing/Main.c vec
+com/nowcomputing/Main.d Lcom/nowcomputing/f/s; mainWindow
+com/nowcomputing/Main.e Lcom/nowcomputing/b; gbInstance
+com/nowcomputing/Main.h()V DeletePixelFurnace
 com/nowcomputing/Main.main([Ljava/lang/String;)V main
+com/nowcomputing/Main.vec Ljava/util/Vector; randomVectorForNoReason
 com/nowcomputing/S com/nowcomputing/Files
 com/nowcomputing/S.a logger
 com/nowcomputing/S.a(Ljava/io/Closeable;)V close
@@ -74,12 +88,51 @@ com/nowcomputing/S.g()Ljava/lang/String; getWindowsVersion
 com/nowcomputing/S.g(Ljava/lang/String;)Ljava/lang/String; parseWindowsVersion
 com/nowcomputing/S.h(Ljava/io/File;)Ljava/lang/Object; DeserializeObjectFile
 com/nowcomputing/S.i(Ljava/io/File;)V makeFileHidden
+com/nowcomputing/V com/nowcomputing/GamebandLogManager
+com/nowcomputing/V.a()V jankierReset
+com/nowcomputing/V.b()V jankyReset
+com/nowcomputing/W com/nowcomputing/VersionNumber
+com/nowcomputing/W.a I major
+com/nowcomputing/W.a()I MajorVersion
+com/nowcomputing/W.a(Lcom/nowcomputing/W;)I NewerVersion
+com/nowcomputing/W.b I minor
+com/nowcomputing/W.b()I MinorVersion
+com/nowcomputing/W.c I patch
+com/nowcomputing/W.c()I PatchVersion
+com/nowcomputing/W.d Z beta
+com/nowcomputing/W.d()Lcom/nowcomputing/W; ImplementationVersion
+com/nowcomputing/W.e Lcom/nowcomputing/W; NOVERSION
+com/nowcomputing/W.g Ljava/lang/String; ImplementationVersion
+com/nowcomputing/X.a major
+com/nowcomputing/X.a(Lcom/nowcomputing/W;)I NewerVersion
+com/nowcomputing/X.b minor
+com/nowcomputing/X.c patch
+com/nowcomputing/X.d beta
 com/nowcomputing/b com/nowcomputing/Instance
 com/nowcomputing/b.a log
 com/nowcomputing/b.a()Z lock
 com/nowcomputing/b.b name
 com/nowcomputing/b.b()V unlock
 com/nowcomputing/b.c id
+com/nowcomputing/b/a/a.h()V DestroyMaybe
+com/nowcomputing/b/a/a.i()V AddActionListeners
+com/nowcomputing/b/a/a.j()V RemoveActionListeners
+com/nowcomputing/b/a/a.k()V HideWhileGame
+com/nowcomputing/b/a/a.n()V CheckForGameband
+com/nowcomputing/b/a/j.n()V CheckForGameband
+com/nowcomputing/d/a.f Ljava/util/logging/Logger; logger
+com/nowcomputing/d/d com/nowcomputing/d/HIDAPIClass
+com/nowcomputing/d/d.a Lcom/codeminders/hidapi/HIDManager; hidman
+com/nowcomputing/d/d.a(IILjava/lang/String;)Lcom/codeminders/hidapi/HIDDevice; openDevice
+com/nowcomputing/d/d.a(I[SII)V writeSafelymaybe
+com/nowcomputing/d/d.a([BII)V shiftTastic
+com/nowcomputing/d/d.a([B[BI)Z write
+com/nowcomputing/d/d.a([S[SII)Z ooglyboogly
+com/nowcomputing/d/d.b Lcom/codeminders/hidapi/HIDDevice; gameband
+com/nowcomputing/d/d.c I stupidobviousintname
+com/nowcomputing/d/d.stupidobviousintname I releaseNumber
+com/nowcomputing/d/e com/nowcomputing/d/callabledoodad
+com/nowcomputing/d/e.a Lcom/nowcomputing/d/HIDAPIClass; hidclass
 com/nowcomputing/d/f com/nowcomputing/gamebandHW/GBCommunication
 com/nowcomputing/d/f.a logger
 com/nowcomputing/d/f.a(Lcom/nowcomputing/e/d;)V a
@@ -97,14 +150,52 @@ com/nowcomputing/d/p com/nowcomputing/d/magicNumbers
 com/nowcomputing/d/p.a numbers
 com/nowcomputing/d/p.a(J)V splitlong
 com/nowcomputing/d/p.a(S)I bitshift18
+com/nowcomputing/e com/nowcomputing/PropertyDingus
+com/nowcomputing/e.a Ljava/io/File; gamebandProperties
+com/nowcomputing/e.a(Ljava/lang/String;)Ljava/lang/String; FixFileSeperator
+com/nowcomputing/e.a(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String; get
+com/nowcomputing/e.b Ljava/util/Properties; properties
+com/nowcomputing/e.b(Ljava/lang/String;Ljava/lang/String;)V set
+com/nowcomputing/e.c Ljava/io/File; file
+com/nowcomputing/e.file Ljava/io/File; configFile
 com/nowcomputing/e/d com/nowcomputing/e/ScrollStyle
 com/nowcomputing/e/d.a()Ljava/lang/String; tooString
 com/nowcomputing/e/d.e scrollID
 com/nowcomputing/e/d.f scrollName
+com/nowcomputing/e/g.i()V AddActionListeners
 com/nowcomputing/f com/nowcomputing/dingus
 com/nowcomputing/f.a log
 com/nowcomputing/f.a(Ljava/io/File;)V ReadStoredTimezone
 com/nowcomputing/f.a(Ljava/lang/String;)Ljava/lang/String; GetLocalisedString
+com/nowcomputing/f.b Ljava/util/ResourceBundle; bundle
+com/nowcomputing/f.c Ljava/util/Locale; locale
+com/nowcomputing/f.d Ljava/util/ArrayList; list
+com/nowcomputing/f.e Ljava/util/TimeZone; tz
 com/nowcomputing/f.e()Ljava/util/TimeZone; getCurrentTimeZone
+com/nowcomputing/f/A.l()V WindowThread
+com/nowcomputing/f/aa.n()V CheckForGameband
+com/nowcomputing/f/b.n()V CheckForGameband
+com/nowcomputing/f/b/a.i()V AddActionListeners
+com/nowcomputing/f/b/b.h()V DestroyMaybe
+com/nowcomputing/f/b/d.h()V DestroyMaybe
+com/nowcomputing/f/b/e.h()V DestroyMaybe
+com/nowcomputing/f/b/e.i()V AddActionListeners
+com/nowcomputing/f/b/n.h()V DestroyMaybe
+com/nowcomputing/f/i.h()V DestroyMaybe
+com/nowcomputing/f/s com/nowcomputing/f/MainWindow
+com/nowcomputing/f/s.a Ljava/util/logging/Logger; logger
+com/nowcomputing/f/s.h Z AlreadyWaiting
+com/nowcomputing/f/s.h()V DestroyMaybe
+com/nowcomputing/f/s.i()V AddActionListeners
+com/nowcomputing/f/s.j()V RemoveActionListeners
+com/nowcomputing/f/s.k()V HideWhileGame
+com/nowcomputing/f/s.l()V WindowThread
+com/nowcomputing/f/s.n()V CheckForGameband
+com/nowcomputing/f/u com/nowcomputing/f/ThreadTryingToFuckMeUp
+com/nowcomputing/f/u.a Lcom/nowcomputing/f/s; Window
+com/nowcomputing/f/v com/nowcomputing/f/MMMUnnessecaryThread
+com/nowcomputing/f/v.a Lcom/nowcomputing/f/s; window
+com/nowcomputing/f/z.l()V WindowThread
 com/nowcomputing/p com/nowcomputing/DingusOSUtil
 com/nowcomputing/p.a OS
+com/nowcomputing/u com/nowcomputing/ShutdownHook
