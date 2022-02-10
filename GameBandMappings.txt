@@ -120,6 +120,7 @@ com/nowcomputing/b/a/a.j()V RemoveActionListeners
 com/nowcomputing/b/a/a.k()V HideWhileGame
 com/nowcomputing/b/a/a.n()V CheckForGameband
 com/nowcomputing/b/a/j.n()V CheckForGameband
+com/nowcomputing/d com/nowcomputing/quickanddirtyrename
 com/nowcomputing/d/a.f Ljava/util/logging/Logger; logger
 com/nowcomputing/d/d com/nowcomputing/d/HIDAPIClass
 com/nowcomputing/d/d.a Lcom/codeminders/hidapi/HIDManager; hidman
@@ -149,7 +150,8 @@ com/nowcomputing/d/f.f()V readGameband
 com/nowcomputing/d/p com/nowcomputing/d/magicNumbers
 com/nowcomputing/d/p.a numbers
 com/nowcomputing/d/p.a(J)V splitlong
-com/nowcomputing/d/p.a(S)I bitshift18
+com/nowcomputing/d/p.a(S)I shaveEndBits
+com/nowcomputing/d/p.b(S)S shaveEndBitsAlt
 com/nowcomputing/e com/nowcomputing/PropertyDingus
 com/nowcomputing/e.a Ljava/io/File; gamebandProperties
 com/nowcomputing/e.a(Ljava/lang/String;)Ljava/lang/String; FixFileSeperator
